@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Closer — The Digital Love Experience</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- MUSIC (Replace file in assets folder) -->
+<audio id="bgMusic" loop>
+<source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- STEP 1 HOOK -->
+<section id="hook">
+    <div class="center">
+        <h1 class="fadeText">“Distance means so little… when someone means so much.”</h1>
+        <button id="startBtn" class="glow">Tap to Feel Close</button>
+    </div>
+</section>
+
+<!-- MAIN EXPERIENCE -->
+<section id="experience" class="hidden">
+
+    <!-- PERSONALIZATION -->
+    <div class="glass card">
+        <h2>Create Your Love Experience</h2>
+        <input id="sender" placeholder="Your Name">
+        <input id="receiver" placeholder="Partner's Name">
+        <textarea id="met" placeholder="How did you meet?"></textarea>
+        <textarea id="memory" placeholder="Favorite memory"></textarea>
+        <input id="years" placeholder="Years together">
+        <button onclick="generateLove()">Generate Love Story</button>
+    </div>
+
+    <!-- LOVE STORY -->
+    <div id="loveStory" class="glass card hidden"></div>
+
+    <!-- DISTANCE -->
+    <div class="glass card">
+        <h2>Distance Means Nothing</h2>
+        <input id="city1" placeholder="Your City">
+        <input id="city2" placeholder="Partner's City">
+        <button onclick="getDistance()">Calculate Distance</button>
+        <p id="distanceResult"></p>
+    </div>
+
+    <!-- HUG BUTTON -->
+    <div class="center">
+        <button class="hug" onclick="sendHug()">Send Hug 🤍</button>
+        <div id="bears"></div>
+    </div>
+
+    <!-- MEMORY TIMELINE -->
+    <section class="timeline">
+        <div class="memory"><img src="assets/memory1.jpg"></div>
+        <div class="memory"><img src="assets/memory2.jpg"></div>
+        <div class="memory"><img src="assets/memory3.jpg"></div>
+    </section>
+
+    <!-- FINAL SURPRISE -->
+    <div class="center">
+        <button class="glow" onclick="openEnvelope()">One Last Thing…</button>
+    </div>
+
+</section>
+
+<!-- ENVELOPE -->
+<div id="envelope" class="hidden">
+    <div class="letter glass">
+        <h2 id="finalMessage">Will you be mine forever?</h2>
+        <button onclick="confetti()">Open My Heart 💍</button>
+    </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+    <button onclick="toggleTheme()">🌙</button>
+    <button onclick="toggleHearts()">💗</button>
+    <button onclick="toggleMusic()">🎵</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
